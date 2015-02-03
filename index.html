@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Global Leadership and Strategy Summit 2015" />
@@ -18,6 +18,9 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+	<script src="js/modernizr.custom.js"></script>
 	
 </head>
 <body>
@@ -71,24 +74,31 @@
 			<p>The Global Leadership and Strategic Summit 2015 will bring together young leaders from all parts of the nation arrive to portray the role of various countries that comprise the United Nations. The delegates representing each Nation in a simulation format will aim to debate, scrutinise and bring about the needed transformation to more sustainable and inclusive decisions on various agendas in their respective councils.</p>
 			<a class="read-more" href="about.html">Read More</a>
 	</article>
-
-	<!-- <article class="bg-wrapper light">
-		<div class="width-wrapper invitation msg">
-			<h2>Secretariat's Message</h2>
-			<div class="contain clearfix" id="msg">
-				<div> 
-					<p>Dear future participants,</p>
-					<p>It is amongst other things a tremendous privilege for me to be the Secretary General of this year's edition of the Global Leadership and Strategy Summit and as such, my esteemed honour to welcome you to its 2nd edition.</p>
-					<p>GLASS, from its inception in 2012 as the G20 Summit, has evolved from being a bright committee to a three council conference that focuses primarily on research, debate and effective discussions. It is a premier event of VIT Business School's annual B-Fest, Invictus, and rightfully so. We, at GLASS, hope to discuss, analyse and hopefully resolve in our capacities, some of the world's most pressing issues with the help of the best delegates and Executive Board members from across the country.</p>
-					<p>For the same, we'll be simulating three councils during the conference, namely The UN General Assembly, the Group of 20 nations and The World Trade Organisation. We promise the councils will be intense and hope to test the composure as well as the impulsiveness of the Delegates as well as the chairs. My relationship with GLASS is quite an extra-ordinary one, for I was a part of the Secretariat in its first edition and we managed to pull off a conference that left everyone with a smile. On the brink of an entirely new and fresh GLASS experience as its Secretary General, I am even more anxious and dare I say eager to witness the success of GLASS 2015. I'm anxious to meet the new people who will participate as delegates and I'm eager to welcome those that will partake as observers.</p>
-					<p>It is indeed my honour and privilege to officially welcome you all to the 7th Global Leadership and Strategy Summit 2015 from 13th</p>
-					<p>Yours faithfully,<br>
-					Akriti Chadda <br>
-					Secretary-General</p>
+	
+	<article class="bg-wrapper light">
+		<div class="width-wrapper">
+		<p style="color: #424242">To read Secretrait's Message</p>
+		<div class="morph-button morph-button-overlay morph-button-fixed">
+				<button type="button">CLICK HERE</button>
+				<div class="morph-content">
+					<div class="width-wrapper invitation msg">
+						<div class="content-style-overlay">
+							<span class="close-icon">&#x2715;</span>
+							<h2>Secretrait's Message</h2>
+							<p>Dear future participants,</p>
+							<p>It is amongst other things a tremendous privilege for me to be the Secretary General of this year's edition of the Global Leadership and Strategy Summit and as such, my esteemed honour to welcome you to its 2nd edition.</p>
+							<p>GLASS, from its inception in 2012 as the G20 Summit, has evolved from being a bright committee to a three council conference that focuses primarily on research, debate and effective discussions. It is a premier event of VIT Business School's annual B-Fest, Invictus, and rightfully so. We, at GLASS, hope to discuss, analyse and hopefully resolve in our capacities, some of the world's most pressing issues with the help of the best delegates and Executive Board members from across the country.</p>
+							<p>For the same, we'll be simulating three councils during the conference, namely The UN General Assembly, the Group of 20 nations and The World Trade Organisation. We promise the councils will be intense and hope to test the composure as well as the impulsiveness of the Delegates as well as the chairs. My relationship with GLASS is quite an extra-ordinary one, for I was a part of the Secretariat in its first edition and we managed to pull off a conference that left everyone with a smile. On the brink of an entirely new and fresh GLASS experience as its Secretary General, I am even more anxious and dare I say eager to witness the success of GLASS 2015. I'm anxious to meet the new people who will participate as delegates and I'm eager to welcome those that will partake as observers.</p>
+							<p>It is indeed my honour and privilege to officially welcome you all to the 7th Global Leadership and Strategy Summit 2015 from 13th</p>
+							<p>Yours faithfully,<br>
+							Akriti Chadda <br>
+							Secretary-General</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</article> -->
+			</div>
+		</article>
 
 	<article id="schedule" class="schedule">
 		<div class="contain clearfix">
@@ -218,5 +228,75 @@
 	<script type="text/javascript" src="js/menu.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/uiMorphingButton_fixed.js"></script>
+	<script>
+		(function() {	
+			var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+			// trick to prevent scrolling when opening/closing button
+			function noScrollFn() {
+				window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+			}
+
+			function noScroll() {
+				window.removeEventListener( 'scroll', scrollHandler );
+				window.addEventListener( 'scroll', noScrollFn );
+			}
+
+			function scrollFn() {
+				window.addEventListener( 'scroll', scrollHandler );
+			}
+
+			function canScroll() {
+				window.removeEventListener( 'scroll', noScrollFn );
+				scrollFn();
+			}
+
+			function scrollHandler() {
+				if( !didScroll ) {
+					didScroll = true;
+					setTimeout( function() { scrollPage(); }, 60 );
+				}
+			};
+
+			function scrollPage() {
+				scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+				didScroll = false;
+			};
+
+			scrollFn();
+			
+			var el = document.querySelector( '.morph-button' );
+			
+			new UIMorphingButton( el, {
+				closeEl : '.close-icon',
+				onBeforeOpen : function() {
+					// don't allow to scroll
+					noScroll();
+				},
+				onAfterOpen : function() {
+					// can scroll again
+					canScroll();
+					// add class "noscroll" to body
+					classie.addClass( document.body, 'noscroll' );
+					// add scroll class to main el
+					classie.addClass( el, 'scroll' );
+				},
+				onBeforeClose : function() {
+					// remove class "noscroll" to body
+					classie.removeClass( document.body, 'noscroll' );
+					// remove scroll class from main el
+					classie.removeClass( el, 'scroll' );
+					// don't allow to scroll
+					noScroll();
+				},
+				onAfterClose : function() {
+					// can scroll again
+					canScroll();
+				}
+			} );
+		})();
+	</script>
 </body>
 </html>

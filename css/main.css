@@ -8,15 +8,15 @@ body{
   font-family: "muliregular", sans-serif;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar, .morph-content::-webkit-scrollbar {
     width: 1em;
 }
  
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, .morph-content::-webkit-scrollbar-track {
 	background-color: #F5F5F5;
 }
  
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, .morph-content::-webkit-scrollbar-thumb {
   background-color: #343434;
 }
 
@@ -284,6 +284,7 @@ a{
     width: 95%;
     max-width: 400px;
     padding-bottom: 15px;
+    border: none;
   }
 }
 
@@ -568,26 +569,34 @@ select{
   margin: 0 auto;
 }
 
-#msg{
-  text-align: left;
-  max-width: 1000px;
-}
-
 .light{
   background: #fafafa;
+}
+
+.close-icon{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 28px;
+  color: #eee;
+  border: 2px solid #eee;
+  position: fixed;
+  top:20px;
+  right: 40px;
+  left: auto;
+  border-radius: 50%;
 }
 
 .msg h2{
   font-family: "jenna_sueregular";
   font-size: 5em;
-  /*text-shadow: 2px 2px #2e4551;*/
-  color: #000;
+  color: #eee;
   margin-bottom: 45px;
 }
 
 .msg p{
   padding-top: 22px;
-  color: #000;
+  color: #fff;
   text-align: justify;
 }
 
