@@ -8,16 +8,18 @@ body{
   font-family: "muliregular", sans-serif;
 }
 
-body::-webkit-scrollbar, .morph-content::-webkit-scrollbar {
-    width: 1em;
-}
- 
-body::-webkit-scrollbar-track, .morph-content::-webkit-scrollbar-track {
-	background-color: #F5F5F5;
-}
- 
-body::-webkit-scrollbar-thumb, .morph-content::-webkit-scrollbar-thumb {
-  background-color: #343434;
+@media all and (min-width: 800px){
+    body::-webkit-scrollbar, .morph-content::-webkit-scrollbar {
+        width: 1em;
+    }
+     
+    body::-webkit-scrollbar-track, .morph-content::-webkit-scrollbar-track {
+      background-color: #F5F5F5;
+    }
+     
+    body::-webkit-scrollbar-thumb, .morph-content::-webkit-scrollbar-thumb {
+      background-color: #343434;
+    }
 }
 
 .indigo{
@@ -320,6 +322,11 @@ a{
 .invitation, .events{
 	padding: 10% 0;
 
+}
+
+.invitation span{
+  font-family: "ostrich_sansmedium";
+  text-shadow: none;
 }
 
 .about p{
