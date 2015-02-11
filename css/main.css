@@ -722,7 +722,7 @@ select{
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 750px;
   width: 100%;
   padding: 20px;
   font-size: 16px;
@@ -1102,6 +1102,41 @@ li{
 .responsive-menu a:hover{
   color: #c59d5f;
 }
+
+
+.allot-contain{
+  padding: 50px;
+  text-align: center;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@media all and (max-width: 767px){
+	.allot-contain{
+		padding: 15px;
+	}
+}
+
+
+.allot h2{
+  font-family: "ostrich_sansmedium";
+}
+
+.allot-contain h2{
+	text-align: left;
+	line-height: 40px;
+	padding-left: 20px;
+}
+
+.agenda h2{
+  font-size: 44px;
+}
+
+.agenda p{
+  text-align: justify;
+  font-size: 15px;
+}
+
 
 
 
