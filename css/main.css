@@ -1164,6 +1164,14 @@ li{
   color: #fff;
 }
 
+#ip-link{
+  color: #000;
+}
+
+#ip-link:hover, #ip-link:focus{
+  text-decoration: none;    
+}
+
 
 
 
