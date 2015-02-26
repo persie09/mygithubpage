@@ -1164,6 +1164,33 @@ li{
   color: #fff;
 }
 
+.sponsors{
+  text-align: center;
+}
+
+.sponsors p{
+  font-size: 16px;
+}
+
+.sponsors img{
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  text-align: center;
+  margin: 0 auto;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.sponsors img:hover, .sponsors img:focus{
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+#resources{
+  background: #fafafa !important;
+}
 
 
 
